@@ -3,14 +3,17 @@
         <li class="nav-small-cap">Menu</li>
         <!-- //BATAS SATU MENU -->
         <li>
-            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempatliburan"><i class="mdi mdi-gauge"></i><span class="hide-menu">Liburan</span></a>
+            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home</span></a>
         </li>
         <li>
-                    <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempat_budaya"><i class="mdi mdi-gauge"></i><span class="hide-menu">Budaya</span></a>
-                </li>
-                <li>
-                            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempatentertaiment"><i class="mdi mdi-gauge"></i><span class="hide-menu">Enterteiment</span></a>
-                        </li>
+            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempat_budaya"><i class="mdi mdi-gauge"></i><span class="hide-menu">Budaya</span></a>
+        </li>
+        <li>
+            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempatentertaiment"><i class="mdi mdi-gauge"></i><span class="hide-menu">Entertaiment</span></a>
+        </li>
+         <li>
+            <a class="waves-effect waves-dark" href="<?php echo base_url()?>admin/T_tempatliburan"><i class="mdi mdi-gauge"></i><span class="hide-menu">Liburan</span></a>
+        </li>
         <!-- //BATAS SATU MENU -->
 
 

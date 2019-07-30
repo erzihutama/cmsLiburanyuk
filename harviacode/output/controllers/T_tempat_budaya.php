@@ -9,7 +9,7 @@ class T_tempat_budaya extends MY_Controller
     {
         parent::__construct();
         $this->load->model('T_tempat_budaya_model');
-        $this->load->library('form_validation');    
+        $this->load->library('form_validation');
     }
 
     public function index()
@@ -19,13 +19,13 @@ class T_tempat_budaya extends MY_Controller
       $datafield=$this->T_tempat_budaya_model->get_field();//panggil ke modell
 
       $data = array(
-        'contain_view' => 'admin/t_tempat_budaya/t_tempat_budaya_list',
-        'sidebar'=>'admin/sidebar',
-        'css'=>'admin/crudassets/css',
-        'script'=>'admin/crudassets/script',
+        'contain_view' => '{namamodule}/t_tempat_budaya/t_tempat_budaya_list',
+        'sidebar'=>'{namamodule}/sidebar',
+        'css'=>'{namamodule}/crudassets/css',
+        'script'=>'{namamodule}/crudassets/script',
         'datat_tempat_budaya'=>$datat_tempat_budaya,
         'datafield'=>$datafield,
-        'module'=>'admin',
+        'module'=>'{namamodule}',
         'titlePage'=>'t_tempat_budaya',
         'controller'=>'t_tempat_budaya'
        );
@@ -35,12 +35,12 @@ class T_tempat_budaya extends MY_Controller
 
     public function create(){
       $data = array(
-        'contain_view' => 'admin/t_tempat_budaya/t_tempat_budaya_form',
-        'sidebar'=>'admin/sidebar',//Ini buat menu yang ditampilkan di module admin {DIKIRIM KE TEMPLATE}
-        'css'=>'admin/crudassets/css',//Ini buat kirim css dari page nya  {DIKIRIM KE TEMPLATE}
-        'script'=>'admin/crudassets/script',//ini buat javascript apa aja yang di load di page {DIKIRIM KE TEMPLATE}
-        'action'=>'admin/t_tempat_budaya/create_action',
-        'module'=>'admin',
+        'contain_view' => '{namamodule}/t_tempat_budaya/t_tempat_budaya_form',
+        'sidebar'=>'{namamodule}/sidebar',//Ini buat menu yang ditampilkan di module admin {DIKIRIM KE TEMPLATE}
+        'css'=>'{namamodule}/crudassets/css',//Ini buat kirim css dari page nya  {DIKIRIM KE TEMPLATE}
+        'script'=>'{namamodule}/crudassets/script',//ini buat javascript apa aja yang di load di page {DIKIRIM KE TEMPLATE}
+        'action'=>'{namamodule}/t_tempat_budaya/create_action',
+        'module'=>'{namamodule}',
         'titlePage'=>'t_tempat_budaya',
         'controller'=>'t_tempat_budaya'
        );
@@ -50,13 +50,13 @@ class T_tempat_budaya extends MY_Controller
     public function edit($id){
       $dataedit=$this->T_tempat_budaya_model->get_by_id($id);
       $data = array(
-        'contain_view' => 'admin/t_tempat_budaya/t_tempat_budaya_edit',
-        'sidebar'=>'admin/sidebar',//Ini buat menu yang ditampilkan di module admin {DIKIRIM KE TEMPLATE}
-        'css'=>'admin/crudassets/css',//Ini buat kirim css dari page nya  {DIKIRIM KE TEMPLATE}
-        'script'=>'admin/crudassets/script',//ini buat javascript apa aja yang di load di page {DIKIRIM KE TEMPLATE}
-        'action'=>'admin/t_tempat_budaya/update_action',
+        'contain_view' => '{namamodule}/t_tempat_budaya/t_tempat_budaya_edit',
+        'sidebar'=>'{namamodule}/sidebar',//Ini buat menu yang ditampilkan di module admin {DIKIRIM KE TEMPLATE}
+        'css'=>'{namamodule}/crudassets/css',//Ini buat kirim css dari page nya  {DIKIRIM KE TEMPLATE}
+        'script'=>'{namamodule}/crudassets/script',//ini buat javascript apa aja yang di load di page {DIKIRIM KE TEMPLATE}
+        'action'=>'{namamodule}/t_tempat_budaya/update_action',
         'dataedit'=>$dataedit,
-        'module'=>'admin',
+        'module'=>'{namamodule}',
         'titlePage'=>'t_tempat_budaya',
         'controller'=>'t_tempat_budaya'
        );
@@ -82,7 +82,7 @@ class T_tempat_budaya extends MY_Controller
 
             $this->T_tempat_budaya_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('admin/t_tempat_budaya'));
+            redirect(site_url('{namamodule}/t_tempat_budaya'));
         }
     }
 
@@ -106,7 +106,7 @@ class T_tempat_budaya extends MY_Controller
 
             $this->T_tempat_budaya_model->update($this->input->post('id_budaya', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('admin/t_tempat_budaya'));
+            redirect(site_url('{namamodule}/t_tempat_budaya'));
         }
     }
 
@@ -117,10 +117,10 @@ class T_tempat_budaya extends MY_Controller
         if ($row) {
             $this->T_tempat_budaya_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('admin/t_tempat_budaya'));
+            redirect(site_url('{namamodule}/t_tempat_budaya'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('admin/t_tempat_budaya'));
+            redirect(site_url('{namamodule}/t_tempat_budaya'));
         }
     }
 
